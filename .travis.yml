@@ -1,5 +1,18 @@
+language: python
+python:
+- 3.6
+- 3.5
+- 3.4
+- 2.7
+install: pip install -U tox-travis
+script: tox
 deploy:
   provider: pypi
+  distributions: sdist bdist_wheel
   user: mattmacari
   password:
-    secure: RxgZ4hIK4sqTjL2x5QDwWMBn+kEACmVXD59ULsKnyNgilrOBkvgntwYhOfodkpoOsiQb6yJvS8MeZtshi759v2ECQWkCryHFFr15FMnmKFBgKe7cYVPV+2Lem7/OjRBgatyHg/Ta5jTMhz3nCR/RG78ICU9p7Jz0pQ1jQJrghgMjfuxLfxgWEbez4MEl9TgQonOFCph4cIXUsY5+y78VQqrUdzcXmMGU+rUKh/5YI2RwFERWnyvfpZSaD19M7fvOfPvnpSYlQyDBc/0BJco6YdC4XOwyqUrGiol2ABcUPfXu6H+JikvUr4mNpo1dl14iA4qqa2qxG2ZrajZsrvnjEqKQsk8GXAREAPYgempiEvFzbTllRii0jI/nJRbka9QdPWMM7KtkTHOESy/6Iut37dC/r8tZBD51a4/2jdXmArBDSh+MbF7k2VUGneZFWi3DZmmsjVvj+ASku48uvqB0fSW/v8OpB1JrGBgMAnDUML1AdKSTvy0gqeSLTaMlHVBViBX2aZI81TxH3hlD2qoUp5Kl304z4OB2PjMzV8ldTIfl+Nj5KVgjeJxh8TwF7PY2LOFNpAcLW5XxhKWwnelHBDy1dQ51RKslw8908zGtmB8GwDORwlMvsIfGlDVkOCDxfM2sxnmVg6Ojoc8uetCJ9VPbh6SmqdS2+N1l+K0ZkNY=
+    secure: NMxa1Wmn1ssUkOo+/cKldHHC8PW19Saxcuf/md9BYV935MtBRUJdoBH8pn+ILCfbV6lu2WU8ET0bC1BcL0NAwDCiPgrDDGoHevhu1uKED9QYO2O+OGDFbFTNwFY2lEM1ZtiB3qJv5+QysIzT/MqioChBgGgrFwAIZy0wMeaDsbdUWWr1m8rWldndxGAXtcQ/6zK9paL4noBf/wfxzIVPG7czSslyXE+qDu/0mw52T5ok2p1jHaTAUMczw4adY1zbzfKk9KHXSBLjfz9E0tOe7EFrqcnGMdsG/GTXohzOE50CIlHaEKf2KRKg1lvQD0iC02oXOcrMTxBkP+qOldPsvX8jZNEBY1htrNBtjlou9464sLeYg6TPfVS8hQ92bPj5c7J5BKCK0OF+yLuRKHkTiv0qxWE3h4PQhFtxh8EECGD6/oDvU0u39ISf5lDZCybMfzEmlJ0Ra10v6HSb+9+GPedFxkf8CCnKJRO7NQUpolIDH3PidxoJkM8l1Y6DJwL09Z7ySiJRgDa1O0tL83yolUP5pWkATCoIrvIOveeFirsy8N6/NNXx7l/aeP5ykgRtlppQjE/g87B9zsx7zxe7yeiYlfXyY92bs0Z7f+eBP6vVQ/8B8tY66mtRnvwIfPavPCRPp9tHY4oRaYvYpz0YPg1X2rttlncuncMM2MJM2Sw=
+  on:
+    tags: true
+    repo: mattmacari/usda_parser
+    python: 3.6
