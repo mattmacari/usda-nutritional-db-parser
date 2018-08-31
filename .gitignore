@@ -107,4 +107,4 @@ venv.bak/
 /.vscode
 
 # data folder
-./data
+/data
