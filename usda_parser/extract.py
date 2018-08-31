@@ -12,9 +12,10 @@ logger = logging.getLogger(__name__)
 
 def download_db_archive(url: str=USDA_URL, output_dir: str=None) -> str:
     """
-    Downloads database archive from the default `USDA_URL`, or user specified location.
-    The archive is downloaded to either the directory specified by `output_dir` or 
-    to a temporary file location determined and returned at runtime.
+    Downloads database archive from the default `USDA_URL`, or user specified
+    location. The archive is downloaded to either the directory specified by
+    `output_dir` or to a temporary file location determined and returned at
+    runtime.
 
     :param str url: URL where the USDA database is contained.
     :return: Absolute path for the downloaded archive.
@@ -30,6 +31,7 @@ def download_db_archive(url: str=USDA_URL, output_dir: str=None) -> str:
             if chunk:
                 f.write(chunk)
     return output_path
+
 
 def extract_db_archive(archive_file_path: str) -> dict:
     """
