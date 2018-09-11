@@ -36,7 +36,7 @@ setup(
     description="USDA National Nutrient Database Parser",
     entry_points={
         'console_scripts': [
-            'usda_parser=usda_parser.cli:main',
+            'download=usda_parser.cli:download_archive'
         ],
     },
     install_requires=requirements,
@@ -51,5 +51,5 @@ setup(
     tests_require=test_requirements,
     url='https://github.com/mattmacari/usda_parser',
     version='0.1.0',
-    zip_safe=False,
+    zip_safe=False
 )
