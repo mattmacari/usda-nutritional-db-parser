@@ -14,7 +14,7 @@ To get started with this repo:
     cd usda-nutritional-db-parser
     python -m  venv env
     source env/bin/activate
-    pip install -u pip
+    pip install --upgrade pip
     pip install -r prod.txt
 ```
 
@@ -25,7 +25,7 @@ To get started developing with the repo:
     cd usda-nutritional-db-parser
     python -m  venv env
     source env/bin/activate
-    pip install -u pip
+    pip install --upgrade pip
     pip install -r dev.txt
 ```
 
