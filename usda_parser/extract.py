@@ -45,6 +45,7 @@ def extract_db_archive(archive_file_path: str) -> dict:
     o_path = os.path.dirname(archive_file_path)
     with zipfile.ZipFile(archive_file_path, mode='r') as zf:
         for file in zf.filelist:
-            f_name = zf.extract(file.orig_filename, path=o_path)
-            file_mapping[file.orig_filename] = f_name
+            if file.orig_filename.endswith('.txt'):
+                f_name = zf.extract(file.orig_filename, path=o_path)
+                file_mapping[file.orig_filename] = f_name
     return file_mapping
