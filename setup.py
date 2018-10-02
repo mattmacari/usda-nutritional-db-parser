@@ -36,7 +36,8 @@ setup(
     description="USDA National Nutrient Database Parser",
     entry_points={
         'console_scripts': [
-            'download=usda_parser.cli:download_archive'
+            'download=usda_parser.cli:download_archive',
+            'parsejson=usda_parser.cli:write_db',
         ],
     },
     install_requires=requirements,
