@@ -10,14 +10,17 @@ NUM_OF_FILES = 4
 
 @pytest.fixture
 def test_file_names():
-    return (
-    'hello.txt',
-    'world.txt',
-)
+    """
+    Returns a tuple of file names.
+    """
+    return ('hello.txt', 'world.txt',)
 
 
 @pytest.fixture
 def temp_dir(tmpdir):
+    """
+    Creates a temporary directory.
+    """
     return str(tmpdir.mkdir('usda_test'))
 
 
@@ -31,8 +34,10 @@ def test_archive(temp_dir, test_file_names):
     tmp_file_path = os.path.join(temp_dir, 'test.zip')
 
     for fname in test_file_names:
-        buf = '~'.join([''.join(random.choices(ascii_letters, k=random.randint(3,20)))
-                  for _ in range(random.randint(3, 9))])
+        buf = '~'.join([''.join(random.choices(
+                                    ascii_letters,
+                                    k=random.randint(3, 20)
+                                )) for _ in range(random.randint(3, 9))])
         test_files.update({fname: buf})
 
     with zipfile.ZipFile(tmp_file_path, 'w',  zipfile.ZIP_STORED, False) as zf:
@@ -40,3 +45,12 @@ def test_archive(temp_dir, test_file_names):
             zf.writestr(f_name, val)
 
     return tmp_file_path
+
+
+@pytest.fixture
+def sample_data_path():
+    """
+    Returns the path to the test data.
+    """
+    base_dir = os.path.dirname(__file__)
+    return os.path.join(base_dir, 'test_data.txt')
